@@ -18,7 +18,7 @@ function App() {
     <div className="app-container">
       <header>
         <HeaderInfos />
-        <GlobalChart />
+        <GlobalChart coinsData={coinsData} />
       </header>
     </div>
   );

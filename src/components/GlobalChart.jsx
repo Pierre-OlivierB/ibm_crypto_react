@@ -1,6 +1,7 @@
 import React from "react";
 
-function GlobalChart(props) {
+function GlobalChart({ coinsData }) {
+  console.log(coinsData);
   return (
     <div className="global-chart">
       <h1>test g chart</h1>
