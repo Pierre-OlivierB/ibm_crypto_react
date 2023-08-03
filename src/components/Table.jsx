@@ -1,4 +1,5 @@
 import React, { useState } from "react";
+import TableLine from "./TableLine";
 
 function Table({ coinsData }) {
   const [rangeNumber, setRangeNumber] = useState(100);
@@ -10,6 +11,7 @@ function Table({ coinsData }) {
     "Volume",
     "1h",
     "1j",
+    "1s",
     "1m",
     "6m",
     "1a",
@@ -60,7 +62,9 @@ function Table({ coinsData }) {
         ))}
       </ul>
       {coinsData &&
-        coinsData.slice(0, rangeNumber).map((coin) => <h1>{coin.symbol}</h1>)}
+        coinsData
+          .slice(0, rangeNumber)
+          .map((coin, index) => <TableLine coin={coin} index={index} />)}
     </div>
   );
 }
