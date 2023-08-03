@@ -37,7 +37,7 @@ function TableLine({ coin, index }) {
           >
             <img src="./assets/chart-icon.svg" alt="chart-icon" />
             <div className="chart-container" id={coin.name}>
-              {showChart && <CoinChart />}
+              {showChart && <CoinChart coinId={coin.id} coinName={coin.name} />}
             </div>
           </div>
           <h4>{coin.name}</h4>
