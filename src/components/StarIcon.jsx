@@ -30,8 +30,10 @@ function StarIcon({ coinId }) {
       if (favList.includes(coinId)) {
         setLike(true);
       }
+    } else {
+      setLike(false);
     }
-  });
+  }, [coinId]);
 
   return (
     <img
