@@ -1,6 +1,15 @@
-import React from "react";
+import React, { useEffect, useState } from "react";
+import { useDispatch } from "react-redux";
+import { setStableState } from "../action/stable.action";
 
 function TableFilters(props) {
+  const [showStable, setShowStable] = useState(true);
+  const dispatch = useDispatch();
+
+  useEffect(() => {
+    dispatch(setStableState(showStable));
+  }, [showStable]);
+
   return (
     <div className="table-filters">
       <div className="table-filters-container">
@@ -11,8 +20,13 @@ function TableFilters(props) {
             name=""
             id="stableCoin"
             defaultChecked={true}
+            onChange={() => {
+              setShowStable(!showStable);
+            }}
           />
-          <label htmlFor="stableCoin">Avec stable coin</label>
+          <label htmlFor="stableCoin">
+            {showStable ? "Avec stable coin" : "Sans stable coin"}
+          </label>
         </div>
         <div className="no-list-btn">
           <p>Aucune Liste</p>
